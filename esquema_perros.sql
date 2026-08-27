@@ -36,7 +36,11 @@ CREATE TALE zonas(
 
 CREATE TABLE evidencias(
     id_evidencia INT PRIMARY KEY
+    tipo_evidencia VARCHAR(20)
+    archivo VARBINARY(MAX)
 )
+
+INSERT INTO evidencias (tipo_evidencia) VALUES ('Imagen', 'Video');
 
 CREATE TABLE jaurias(
     id_jauria INT PRIMARY KEY,
