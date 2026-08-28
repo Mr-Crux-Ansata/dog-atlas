@@ -1,12 +1,12 @@
 CREATE TABLE roles (
-    INT IDENTITY id_usuario (1,1) PRIMARY KEY,
+    id_usuario INT IDENTITY (1,1) PRIMARY KEY,
     tipo_rol VARCHAR(50) NOT NULL UNIQUE
 );
 
 INSERT INTO roles (tipo_rol) VALUES ('Adminitrador', 'Usuario');
 
 CREATE TABLE usuarios (
-    id_usuario INT PRIMARY KEY, 
+    id_usuario INT IDENTITY (1,1) PRIMARY KEY, 
     nombre VARCHAR(80),
     contraseña VARCHAR(50),
     correo VARCHAR(70),
@@ -14,11 +14,11 @@ CREATE TABLE usuarios (
 );
 
 CREATE TABLE notificaciones (
-    id_notificacion INT PRIMARY KEY
+    id_notificacion INT IDENTITY (1,1) PRIMARY KEY
 );
 
 CREATE TABLE incidentes(
-    id_incidente INT PRIMARY KEY,
+    id_incidente INT IDENTITY (1,1)PRIMARY KEY,
     tipo_incidente VARCHAR(50),
     latitud DECIMAL(10, 8),
     longitud DECIMAL(11, 8),
@@ -30,12 +30,12 @@ CREATE TABLE incidentes(
 );
 
 CREATE TALE zonas(
-    id_usuario INT PRIMARY KEY
+    id_usuario INT IDENTITY (1,1) PRIMARY KEY
     color VARCHAR(20)
 );
 
 CREATE TABLE evidencias(
-    id_evidencia INT PRIMARY KEY
+    id_evidencia INT IDENTITY (1,1) PRIMARY KEY
     tipo_evidencia VARCHAR(20)
     archivo VARBINARY(MAX)
 )
@@ -43,7 +43,7 @@ CREATE TABLE evidencias(
 INSERT INTO evidencias (tipo_evidencia) VALUES ('Imagen', 'Video');
 
 CREATE TABLE jaurias(
-    id_jauria INT PRIMARY KEY,
+    id_jauria INT IDENTITY (1,1) PRIMARY KEY,
     edad_aproximada VARCHAR(50),
     FOREIGN KEY id_incidente REFERENCES incidentes(id_incidente)
 );
@@ -51,7 +51,7 @@ CREATE TABLE jaurias(
 INSERT INTO jaurias (edad_aproximada) VALUES ('Cachorro', 'Joven', 'Senil');
 
 CREATE TABLE trayectorias(
-    id_trayectoria INT PRIMARY KEY
+    id_trayectoria INT IDENTITY (1,1) PRIMARY KEY,
     FOREIGN KEY id_incidente REFERENCES incidentes(id_incidente),
     FOREIGN KEY id_jauria REFERENCES jaurias(id_jauria),
     FOREIGN KEY longitud REFERENCES incidentes(longitud),
@@ -61,6 +61,6 @@ CREATE TABLE trayectorias(
 );
 
 CREATE TABLE zonas(
-    id_zona INT PRIMARY KEY,
+    id_zona INT IDENTITY (1,1) PRIMARY KEY,
     color VARCHAR(20)
 );

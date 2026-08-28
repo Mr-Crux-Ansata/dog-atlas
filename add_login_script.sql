@@ -1,0 +1,7 @@
+CREATE LOGIN Dog_Atlas
+WITH PASSWORD = 'DogAtlas123';
+GO
+
+CREATE USER Dog_Atlas
+FOR LOGIN Dog_Atlas;
+GO
