@@ -2,7 +2,7 @@ CREATE LOGIN Dog_Atlas
 WITH PASSWORD = 'DogAtlas123';
 GO
 
-USE Perros_Atlas;
+USE DogAtlasDB;
 GO
 
 CREATE USER Dog_Atlas
