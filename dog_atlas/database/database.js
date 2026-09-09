@@ -22,7 +22,7 @@ const connection = {
 
 const PromisePool = mssql.connect(connection) 
     .then (pool => {
-        console.log('Connected to the database :D');
+        console.log('Connected to the database, you may continue :D');
         return pool;
     })
     .catch (err => {
